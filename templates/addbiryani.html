@@ -1,0 +1,29 @@
+<html>
+ <body>
+ <form action="{% url 'save_b' %}" method="post">
+ {% csrf_token %}
+ <table align="center" border="2">
+ <tr><th>Biryani Details</th></tr>
+ <tr><th><input type="number" placeholder="No"
+name="bt1"></th></tr>
+     <tr><th><input type="text" placeholder="Biryani Name"
+name="bt2"></th></tr>
+ <tr><th><input type="number" placeholder="Price"
+name="bt3"></th></tr>
+ <tr>
+ <th>
+ <select name="bt4">
+ {% for x in data %}
+ <option value="{{ x.no }}"> {{ x.type }} </option>
+ {% endfor %}
+ </select>
+ </th>
+ </tr>
+ <tr><th><button type="submit">Save</button> </th></tr>
+ </table>
+ {% for x in messages %}
+ <h1 style="font-family: Chiller;size: 30px">{{ x }}</h1>
+ {% endfor %}
+ </form>
+ </body>
+</html>

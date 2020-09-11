@@ -1,0 +1,12 @@
+Biryani type details<br>
+{% for x in data1 %}
+    {{ x.no }}
+    {{ x.type }}<br>
+{% endfor %}
+Bityani details<br>
+{% for x in data2 %}
+    {{ x.no }}
+    {{ x.name }}
+    {{ x.price }}
+    {{ x.biryani_type.type }}<br>
+{% endfor %}
